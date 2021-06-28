@@ -1,22 +1,28 @@
+#include<cs50.h>
+#include <string.h>
+#include <ctype.h>
+
 
 string ari(string para){
  int alpnum=0 , words=0 , sents=0;
- for (int i=0 ; para[i]=='\0'; i++) {
-  if (isalnum(para[i]) == 1 ) {
+
+ for (int i=0 ; para[i] !='\0'; i++) {
+  if(isalnum(para[i]) == 1) {
      alpnum++ ;
+    
      }
-  else if (para[i]==" ") {
+  else if( para[i] ==' ') {
    words++ ;
    }
-  else if (para[i]=='.' || para[i]=='?') {
+  else if(para[i]=='.' || para[i]=='?' || para[i]=='!') {
   sents++;
   }
-  else(para[i]=='!'){
-  sents++;
+  /*else if(para[i]=='!'){
+  sents++;*/
   }
-  }
+ 
   float score;
-  score= 4.71*(alpnum/words) + 0.5*(words/sents)-21.43;
+  score= 4.71*(alpnum/words-1) + 0.5*(words-1/sents)-21.43;
   int rounded_score;
   rounded_score = (int)(score + 1 ); 
   
