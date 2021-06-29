@@ -17,15 +17,26 @@ string ari(string para){
   else if(para[i]=='.' || para[i]=='?' || para[i]=='!') {
   sents++;
   }
-  /*else if(para[i]=='!'){
-  sents++;*/
   }
  
-  float score;
-  score= 4.71*(alpnum/words-1) + 0.5*(words-1/sents)-21.43;
-  int rounded_score;
-  rounded_score = (int)(score + 1 ); 
-  
- string grade[14]={"Kindergarten","First/Second Grade" , "Third Grade","Fourth Grade","Fifth Grade","Sixth Grade","Seventh Grade"," Eighth Grade","Ninth Grade","Tenth Grade","Eleventh Grade","Twelfth grade","College student","Professor"};
- return grade[rounded_score - 1] ;
+ float score;
+ int rounded_score;
+  score= 4.71*(float)(alpnum/words+1) + 0.5*(float)(words+1/sents)-21.43;
+ if( score - (int)score !=0) {
+    rounded_score=(int)(score + 1 );
+ } 
+ else{
+  rounded_score=(int)score;
+ }
+  string grade[14]={"Kindergarten","First/Second Grade" , "Third Grade","Fourth Grade","Fifth Grade","Sixth Grade","Seventh Grade"," Eighth Grade","Ninth Grade","Tenth Grade","Eleventh Grade","Twelfth grade","College student","Professor"};
+ if(rounded_score <= 14) {
+   return grade[rounded_score - 1] ;
+ }
+ else
+  return grade[13];
  }  
+
+
+
+
+
