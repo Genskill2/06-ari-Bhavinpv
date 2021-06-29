@@ -21,7 +21,7 @@ string ari(string para){
  
  float score;
  int rounded_score;
-  score= 4.71*(float)(alpnum/words+1) + 0.5*(float)(words+1/sents)-21.43;
+  score= 4.71*(float)(alpnum/words) + 0.5*(float)(words/sents)-21.43;
  if( score - (int)score !=0) {
     rounded_score=(int)(score + 1 );
  } 
