@@ -3,9 +3,9 @@
 #include <string.h>
 #include <ctype.h>
 
-float score_calculator(int,int,int);
 
 string ari(string para){
+ float score_calculator(int,int,int);
  int alpnum=0 , words=0 , sents=0;
 
  for (int i=0 ; i<strlen(para); i++) {
