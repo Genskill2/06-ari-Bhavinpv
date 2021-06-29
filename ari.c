@@ -7,7 +7,7 @@
 
 string ari (string para) {
 	
-	int no_of_characters(string );
+	int no_of_characters(string );   // protyping
 	int no_of_words(string );
 	int no_of_sentences(string );
 	int score_calculator(int , int , int );
